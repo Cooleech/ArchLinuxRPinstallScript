@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################
 # What	 : ArchLinuxRPiScript  #
-# Which	 : version 1.00        #
+# Which	 : version 1.01        #
 # Who	 : Cooleech            #
 # Where  : GPLv2               #
 # Write	 : cooleechATgmail.com #
@@ -395,7 +395,7 @@ esac
 #==============================================================================#
 echo "#!/bin/bash
 ################
-# ALRPiS v1.00 #
+# ALRPiS v1.01 #
 # By Cooleech  #
 ################
 setfont Lat2-Terminus16 # Postavi font (podržava sva naša slova)
@@ -583,7 +583,7 @@ if ! [ -d /home/$Korisnik/Videos ]; then
  mkdir /home/$Korisnik/Videos
 fi
 echo -e \"\n Dodajem aliase...\"
-echo -e \"alias la='ls -a'\nalias ll='ls -la'\nalias grep='grep --color=auto'\nalias n='sudo pacman -Syu'\nalias i='sudo pacman -Sy'\nalias u='sudo pacman -Rs'\nalias t='pacman -Ss'\" >> /etc/bash.bashrc
+echo -e \"alias la='ls -a'\nalias ll='ls -la'\nalias grep='grep --color=auto'\nalias n='sudo pacman -Syu'\nalias i='sudo pacman -S'\nalias u='sudo pacman -Rs'\nalias t='pacman -Ss'\" >> /etc/bash.bashrc
 echo -e \"\n Predajem vlasništvo /home/$Korisnik mape korisniku $Korisnik...\"
 chown -R $Korisnik /home/$Korisnik
 echo -e \"\n Radim xdg-user-dirs-update...\"
