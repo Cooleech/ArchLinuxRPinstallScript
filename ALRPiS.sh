@@ -498,7 +498,7 @@ echo -e \"\n Nadopuna za .xinitrc...\"
 echo -e \"\nif [ -d /etc/X11/xinit/xinitrc.d ]; then\n for f in /etc/X11/xinit/xinitrc.d/*; do\n   [ -x \\\"\\\$f\\\" ] && . \\\"\\\$f\\\"\n done\n unset f\nfi\n\" >> /home/$Korisnik/.xinitrc
 echo -e \"\n Konfiguriram Network Manager...\"
 systemctl enable NetworkManager
-systemctl enable NetworkManager-dispatcher.service #&& systemctl enable ModemManager.service <=== NEPOTREBNO?
+systemctl enable NetworkManager-dispatcher.service
 echo -e \"\n Dodajem korisnika $Korisnik u network grupu...\"
 gpasswd -a $Korisnik network
 echo -e \"\n Dodajem policy...\"
