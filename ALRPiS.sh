@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################
 # What	 : ArchLinuxRPiScript  #
-# Which	 : version 1.01        #
+# Which	 : version 1.02        #
 # Who	 : Cooleech            #
 # Where  : GPLv2               #
 # Write	 : cooleechATgmail.com #
@@ -464,7 +464,7 @@ hwclock --systz --localtime
 echo -e \"\n Postavljam ime hosta...\"
 echo \"$ImeHosta\" > /etc/hostname
 echo -e \" Preuzimam i instaliram osnovne pakete (za svaki DE)\"
-Paketi1=\"alsa-firmware alsa-plugins alsa-utils bc dialog dnsmasq dosfstools firefox flac gksu gstreamer0.10-plugins gvfs mtools net-tools network-manager-applet networkmanager-dispatcher-ntpd ntfs-3g ntp omxplayer-git p7zip perl-data-dump pulseaudio pulseaudio-alsa sudo ttf-droid ttf-freefont unrar unzip wget wireless_tools wpa_actiond wpa_supplicant xcursor-vanilla-dmz xdg-user-dirs xf86-input-keyboard xf86-input-mouse xf86-video-fbturbo-git xorg-server xorg-server-utils xorg-xclock xorg-xinit xterm vorbis-tools zip\"
+Paketi1=\"alsa-firmware alsa-plugins alsa-utils bc dialog dnsmasq dosfstools firefox flac gksu gst-omx-rpi gvfs mtools net-tools network-manager-applet networkmanager-dispatcher-ntpd ntfs-3g ntp omxplayer-git p7zip perl-data-dump pulseaudio pulseaudio-alsa sudo ttf-droid ttf-freefont unrar unzip wget wireless_tools wpa_actiond wpa_supplicant xcursor-vanilla-dmz xdg-user-dirs xf86-input-keyboard xf86-input-mouse xf86-video-fbturbo-git xorg-server xorg-server-utils xorg-xclock xorg-xinit xterm vorbis-tools zip\"
 pacman -Sy --noconfirm \$Paketi1
 if [ \$? != 0 ]; then
  echo -e \"\n \e[1;31m* $Error *\e[0m\n Jedan ili više paketa nisu uspješno preuzeti. :(\n\"
@@ -485,7 +485,7 @@ m*|x*|l*)
  Paketi2=\"gnome-keyring gnome-themes-standard\"
  pacman -Sy --noconfirm \$Paketi2
  if [ \$? != 0 ]; then
-  echo -e \"\n \e[1;31m* $Error *\e[0m\n Jedan ili dva paketa nisu uspješno preuzeti. :(\n\"
+  echo -e \"\n \e[1;31m* $Error *\e[0m\n Jedan ili oba paketa nisu uspješno preuzeti. :(\n\"
   CONTINUE_OR_CANCEL
  else
   Paketi2=\"\"
