@@ -395,7 +395,7 @@ esac
 #==============================================================================#
 echo "#!/bin/bash
 ################
-# ALRPiS v1.01 #
+# ALRPiS v1.02 #
 # By Cooleech  #
 ################
 setfont Lat2-Terminus16 # Postavi font (podržava sva naša slova)
@@ -477,6 +477,8 @@ echo -e \"Section \\\"InputClass\\\"\n\tIdentifier \\\"system-keyboard\\\"\n\tMa
 \tOption \\\"XkbLayout\\\" \\\"$Layout\\\"\n\tOption \\\"XkbVariant\\\" \\\"\\\"\nEndSection\" > /etc/X11/xorg.conf.d/20-keyboard.conf
 echo -e \"\n Podešavam gvfs...\"
 echo -e \"polkit.addRule(function(action, subject) {\n\tif (action.id.indexOf(\\\"org.freedesktop.udisks2.\\\") == 0){\n\t\treturn polkit.Result.YES;\n\t}\n});\" > /usr/share/polkit-1/rules.d/10-drives.rules
+echo -e \"\n Uređujem ntp.conf...\"
+sed -i 's/arch.pool.ntp.org/arch.pool.ntp.org iburst/g' /etc/ntp.conf
 echo -e \"\n Podešavam vrijeme...\"
 ntpd -qg # <=== NEPOTREBNO?
 case \"$DEzaInst\" in
