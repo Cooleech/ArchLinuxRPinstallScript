@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################
 # What	 : ArchLinuxRPiScript  #
-# Which	 : version 1.03        #
+# Which	 : version 1.04        #
 # Who	 : Cooleech            #
 # Where  : GPLv2               #
 # Write	 : cooleechATgmail.com #
@@ -395,7 +395,7 @@ esac
 #==============================================================================#
 echo "#!/bin/bash
 ################
-# ALRPiS v1.03 #
+# ALRPiS v1.04 #
 # By Cooleech  #
 ################
 setfont Lat2-Terminus16 # Postavi font (podržava sva naša slova)
@@ -585,6 +585,7 @@ if ! [ -d /home/$Korisnik/Videos ]; then
 fi
 wget is.gd/AUSsh -O /home/$Korisnik/Nadograditelj_Setup.sh | echo -e \"\\\n Preuzimam Nadograditeljsku skriptu...\"
 if [ \$? = 0 ]; then
+ chmod 777 /home/$Korisnik/Nadograditelj_Setup.sh
  echo \" Nadograditelj_Setup can be safely deleted if you do not need/want it and you cannot understand a word of croatian.\" > /home/$Korisnik/Read_me_first_Nadograditelj_Setup_EN.txt
  echo \" Nadograditelj_Setup možete slobodno obrisati ako ga ne trebate/želite.\" > /home/$Korisnik/Prvo_me_pročitaj_Nadograditelj_Setup_HR.txt
 fi
