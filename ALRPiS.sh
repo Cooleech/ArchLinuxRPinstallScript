@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################
 # What	 : ArchLinuxRPiScript  #
-# Which	 : version 1.02        #
+# Which	 : version 1.03        #
 # Who	 : Cooleech            #
 # Where  : GPLv2               #
 # Write	 : cooleechATgmail.com #
@@ -395,7 +395,7 @@ esac
 #==============================================================================#
 echo "#!/bin/bash
 ################
-# ALRPiS v1.02 #
+# ALRPiS v1.03 #
 # By Cooleech  #
 ################
 setfont Lat2-Terminus16 # Postavi font (podržava sva naša slova)
@@ -457,7 +457,6 @@ export LANG=en_IE.UTF-8
 echo -e \"\n Postavljam keymap u vconsole.conf...\"
 echo -e \"KEYMAP=croat\" > /etc/vconsole.conf # <=== Triba dodat opciju za odabir! ===
 echo -e \"\n Postavljam zonu lokalnog vremena...\"
-#timedatectl set-timezone Zone/SubZone
 ln -sf /usr/share/zoneinfo/Europe/Zagreb /etc/localtime
 echo -e \"\n Postavljam hwclock...\"
 hwclock --systz --localtime
@@ -583,6 +582,11 @@ if ! [ -d /home/$Korisnik/Templates ]; then
 fi
 if ! [ -d /home/$Korisnik/Videos ]; then
  mkdir /home/$Korisnik/Videos
+fi
+wget is.gd/AUSsh -O /home/$Korisnik/Nadograditelj_Setup.sh | echo -e \"\\\n Preuzimam Nadograditeljsku skriptu...\"
+if [ \$? = 0 ]; then
+ echo \" Nadograditelj_Setup can be safely deleted if you do not need/want it and you cannot understand a word of croatian.\" > /home/$Korisnik/Read_me_first_Nadograditelj_Setup_EN.txt
+ echo \" Nadograditelj_Setup možete slobodno obrisati ako ga ne trebate/želite.\" > /home/$Korisnik/Prvo_me_pročitaj_Nadograditelj_Setup_HR.txt
 fi
 echo -e \"\n Dodajem aliase...\"
 echo -e \"alias la='ls -a'\nalias ll='ls -la'\nalias grep='grep --color=auto'\nalias n='sudo pacman -Syu'\nalias i='sudo pacman -S'\nalias u='sudo pacman -Rs'\nalias t='pacman -Ss'\" >> /etc/bash.bashrc
